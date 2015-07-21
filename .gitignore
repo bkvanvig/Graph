@@ -1,0 +1,8 @@
+*.g*
+!.gitignore
+latex/
+graph-tests/
+.DS_Store
+Doxyfile
+Graph
+TestGraph
