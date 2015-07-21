@@ -38,7 +38,7 @@ clean:
 	rm -f *.gcno
 	rm -f *.gcov
 	rm -f TestGraph
-	rm -f TestGraph.out
+
 
 sync:
 	make clean
@@ -78,6 +78,10 @@ endif
 	which doxygen
 	@echo
 	doxygen --version
+
+log: git log > Graph.log
+
+sha: git rev-parse HEAD
 
 TestGraph: Graph.h TestGraph.c++
 	$(CXX) $(GCOVFLAGS) $(CXXFLAGS) TestGraph.c++ -o TestGraph $(LDFLAGS)
