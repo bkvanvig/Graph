@@ -1,3 +1,15 @@
+FILES :=                              \
+    .travis.yml                       \
+    graph-tests/bmk447-TestDeque.c++ \
+    graph-tests/bmk447-TestDeque.out \
+    Graph.h                         \
+    Graph.log                       \
+    html                              \
+    TestGraph.c++                   \
+    TestGraph.out
+
+
+
 ifeq ($(shell uname), Darwin)
     CXX       := g++
     CXXVER    := --version 2>&1 | grep c++
@@ -70,6 +82,14 @@ endif
 	which doxygen
 	@echo
 	doxygen --version
+
+check:
+	@for i in $(FILES);                                         \
+	do                                                          \
+        [ -e $$i ] && echo "$$i found" || echo "$$i NOT FOUND"; \
+    done
+
+
 
 html: Doxyfile Deque.h TestDeque.c++
 	doxygen Doxyfile
