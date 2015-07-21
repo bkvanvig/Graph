@@ -40,15 +40,6 @@ clean:
 	rm -f TestGraph
 
 
-sync:
-	make clean
-	@echo `pwd`
-	@rsync -r -t -u -v --delete \
-    --include "Graph.h"         \
-    --include "makefile"        \
-    --include "TestGraph.c++"   \
-    --exclude "*"               \
-    . downing@$(CS):cs/cs378/github/c++/graph/
 
 test: TestGraph.out
 
@@ -68,6 +59,7 @@ versions:
 	$(GCOV) $(GCOVVER)
 	@echo
 	grep "#define BOOST_VERSION " $(BOOST)/version.hpp
+
 ifdef VALGRIND
 	@echo
 	which $(VALGRIND)
@@ -79,11 +71,20 @@ endif
 	@echo
 	doxygen --version
 
-graph-tests: git clone https://github.com/cs378-summer-2015/graph-tests.git
+html: Doxyfile Deque.h TestDeque.c++
+	doxygen Doxyfile
 
-log: git log > Graph.log
+graph-tests: 
+	git clone https://github.com/cs378-summer-2015/graph-tests.git
 
-sha: git rev-parse HEAD
+log: 
+	git log > Graph.log
+
+Doxyfile:
+	doxygen -g
+
+sha: 
+	git rev-parse HEAD
 
 TestGraph: Graph.h TestGraph.c++
 	$(CXX) $(GCOVFLAGS) $(CXXFLAGS) TestGraph.c++ -o TestGraph $(LDFLAGS)
