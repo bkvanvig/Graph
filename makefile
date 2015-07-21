@@ -91,7 +91,7 @@ check:
 
 
 
-html: Doxyfile Deque.h TestDeque.c++
+html: Doxyfile Graph.h TestGraph.c++
 	doxygen Doxyfile
 
 graph-tests: 
