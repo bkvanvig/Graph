@@ -1,3 +1,15 @@
+FILES :=                              \
+    .travis.yml                       \
+    graph-tests/bmk447-TestDeque.c++ \
+    graph-tests/bmk447-TestDeque.out \
+    Graph.h                         \
+    Graph.log                       \
+    html                              \
+    TestGraph.c++                   \
+    TestGraph.out
+
+
+
 ifeq ($(shell uname), Darwin)
     CXX       := g++
     CXXVER    := --version 2>&1 | grep c++
@@ -40,15 +52,6 @@ clean:
 	rm -f TestGraph
 
 
-sync:
-	make clean
-	@echo `pwd`
-	@rsync -r -t -u -v --delete \
-    --include "Graph.h"         \
-    --include "makefile"        \
-    --include "TestGraph.c++"   \
-    --exclude "*"               \
-    . downing@$(CS):cs/cs378/github/c++/graph/
 
 test: TestGraph.out
 
@@ -68,6 +71,7 @@ versions:
 	$(GCOV) $(GCOVVER)
 	@echo
 	grep "#define BOOST_VERSION " $(BOOST)/version.hpp
+
 ifdef VALGRIND
 	@echo
 	which $(VALGRIND)
@@ -79,9 +83,28 @@ endif
 	@echo
 	doxygen --version
 
-log: git log > Graph.log
+check:
+	@for i in $(FILES);                                         \
+	do                                                          \
+        [ -e $$i ] && echo "$$i found" || echo "$$i NOT FOUND"; \
+    done
 
-sha: git rev-parse HEAD
+
+
+html: Doxyfile Graph.h TestGraph.c++
+	doxygen Doxyfile
+
+graph-tests: 
+	git clone https://github.com/cs378-summer-2015/graph-tests.git
+
+log: 
+	git log > Graph.log
+
+Doxyfile:
+	doxygen -g
+
+sha: 
+	git rev-parse HEAD
 
 TestGraph: Graph.h TestGraph.c++
 	$(CXX) $(GCOVFLAGS) $(CXXFLAGS) TestGraph.c++ -o TestGraph $(LDFLAGS)
