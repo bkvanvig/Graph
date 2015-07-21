@@ -79,6 +79,8 @@ endif
 	@echo
 	doxygen --version
 
+graph-tests: git clone https://github.com/cs378-summer-2015/graph-tests.git
+
 log: git log > Graph.log
 
 sha: git rev-parse HEAD
