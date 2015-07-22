@@ -1115,12 +1115,15 @@ TYPED_TEST(TestGraph, vertices_3){
     vertex_descriptor vdA = add_vertex(g);
     vertex_descriptor vdB = add_vertex(g);
     vertex_descriptor vdC = add_vertex(g);
-    vertex_descriptor vdD = add_vertex(g);
-    vertex_descriptor vdE = add_vertex(g);
-    vertex_descriptor vdF = add_vertex(g);
+
     vertex_descriptor vdG = add_vertex(g);
     vertex_descriptor vdH = add_vertex(g);
     vertex_descriptor vdI = add_vertex(g);
+
+    vertex_descriptor vdD = add_vertex(g);
+    vertex_descriptor vdE = add_vertex(g);
+    vertex_descriptor vdF = add_vertex(g);
+
     vertex_descriptor vdJ = add_vertex(g);
     vertex_descriptor vdK = add_vertex(g);
     vertex_descriptor vdL = add_vertex(g);
@@ -1140,6 +1143,18 @@ TYPED_TEST(TestGraph, vertices_3){
         vertex_descriptor vd = *b;
         ASSERT_EQ(vdC, vd);}
     ++b;
+        if (b != e) {
+        vertex_descriptor vd = *b;
+        ASSERT_EQ(vdG, vd);}
+    ++b;
+    if (b != e) {
+        vertex_descriptor vd = *b;
+        ASSERT_EQ(vdH, vd);}
+    ++b;
+    if (b != e) {
+        vertex_descriptor vd = *b;
+        ASSERT_EQ(vdI, vd);}
+    ++b;
     if (b != e) {
         vertex_descriptor vd = *b;
         ASSERT_EQ(vdD, vd);}
@@ -1152,18 +1167,7 @@ TYPED_TEST(TestGraph, vertices_3){
         vertex_descriptor vd = *b;
         ASSERT_EQ(vdF, vd);}
     ++b;
-    if (b != e) {
-        vertex_descriptor vd = *b;
-        ASSERT_EQ(vdG, vd);}
-    ++b;
-    if (b != e) {
-        vertex_descriptor vd = *b;
-        ASSERT_EQ(vdH, vd);}
-    ++b;
-    if (b != e) {
-        vertex_descriptor vd = *b;
-        ASSERT_EQ(vdI, vd);}
-    ++b;
+
     if (b != e) {
         vertex_descriptor vd = *b;
         ASSERT_EQ(vdJ, vd);}

@@ -31,7 +31,7 @@ class Graph {
 
         typedef std::vector<vertex_descriptor>::const_iterator vertex_iterator;   
         typedef std::vector<std::pair<int, int> >::const_iterator edge_iterator;      
-        typedef std::vector<vertex_descriptor>::const_iterator adjacency_iterator; // fix!
+        typedef std::vector<vertex_descriptor>::const_iterator adjacency_iterator; 
 
         typedef std::size_t vertices_size_type;
         typedef std::size_t edges_size_type;
@@ -53,11 +53,33 @@ class Graph {
             //only add edge if edge doesn't already exist
 
             if(std::find(g._g.at(vd1).begin(), g._g.at(vd1).end(), vd2) != g._g.at(vd1).end()) {
-                return std::make_pair(ed, b);
+                b = false;
             } else {
                  /* _g.at(vd1) does not contain vd2 */
-                g._e.push_back(ed);
+                // MUST insert in ordered fashion
+                //std::cout << "vd " << vd1 << " "<< vd2 << std::endl;
+                //bool maybe = false;
+                int i;
+                auto pos = g._e.begin();
+                for (i = 0; i < g._e.size(); ++i)
+                {
+                    
+                    //std::cout << "g._e " << g._e.at(i).first << " "<< g._e.at(i).second << std::endl;
+
+                    if (g._e.at(i).first > vd1)
+                        break;
+                    if (g._e.at(i).first == vd1){
+                        if (g._e.at(i).second > vd2){
+                        break;
+                        }
+                    }
+                    ++pos;
+
+                }
+                //std::cout << "Index " << i << std::endl;
+                g._e.insert(pos, ed);
                 g._g.at(vd1).push_back(vd2);
+                b = true;
             }
 
             return std::make_pair(ed, b);}
@@ -101,6 +123,11 @@ class Graph {
             // <your code>
             edge_descriptor ed = std::make_pair(vd1, vd2);
             bool            b  = true;
+            if(std::find(g._g.at(vd1).begin(), g._g.at(vd1).end(), vd2) != g._g.at(vd1).end()) {
+                b = true;
+            } else {
+                b = false;
+            }
             return std::make_pair(ed, b);}
 
         // -----
