@@ -1,0 +1,91 @@
+commit 9c1714ac99ef2b23a0ed992dc5b04410eddafce2
+Author: bkvanvig <bkvanvig104@yahoo.com>
+Date:   Wed Jul 22 00:52:39 2015 -0500
+
+    added comments, close #12, close #18
+
+commit 689bd1af4569ea73bceb8623090b4ec854ba5611
+Author: bkvanvig <bkvanvig104@yahoo.com>
+Date:   Wed Jul 22 00:33:53 2015 -0500
+
+    debugging solution, close #11
+
+commit 18085fbc97c00dd27ac5c72feb572ca6e8028b61
+Author: bkvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jul 21 23:27:44 2015 -0500
+
+    added simple solution, close #10
+
+commit 8a1d29e28c5df4c5924d101956ebbeb7f8089ac1
+Author: bkvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jul 21 21:25:27 2015 -0500
+
+    added unit tests, close #7, close #9
+
+commit cbaf73d3a3e9530dd303fa138d31f1d21cedc113
+Merge: ee0924c e1a429d
+Author: bkvanvig <bkvanvig104@yahoo.com>
+Date:   Mon Jul 20 21:47:17 2015 -0500
+
+    Merge branch 'dev'
+    after successful travis CI build close #6
+
+commit e1a429dfc3a639a4e76b445526ebe298fc8a5e38
+Author: bkvanvig <bkvanvig104@yahoo.com>
+Date:   Mon Jul 20 21:45:37 2015 -0500
+
+    new build
+
+commit 2f0b2f26c4d38e74750c2098cef14103dfe62fa0
+Author: bkvanvig <bkvanvig104@yahoo.com>
+Date:   Mon Jul 20 21:43:20 2015 -0500
+
+    fixed typo in make html rule
+
+commit 3cbcddc5d515393a50bf95ce4474d442969e4827
+Author: bkvanvig <bkvanvig104@yahoo.com>
+Date:   Mon Jul 20 21:37:55 2015 -0500
+
+    added make check rule
+
+commit 092d4ba803a58c5405e363f07b268aeab0a6874c
+Author: bkvanvig <bkvanvig104@yahoo.com>
+Date:   Mon Jul 20 21:32:27 2015 -0500
+
+    still working on makefile/travis build
+
+commit 9f53732aff279ef890d9294d1e55e65b716c6a1d
+Author: bkvanvig <bkvanvig104@yahoo.com>
+Date:   Mon Jul 20 21:25:54 2015 -0500
+
+    added travis file
+
+commit 682e0ba34d43ea416c2465d622f2fc692a6a99e0
+Author: bkvanvig <bkvanvig104@yahoo.com>
+Date:   Mon Jul 20 21:23:26 2015 -0500
+
+    first build, close #4, close #5
+
+commit ee0924cadc0d76823eed916f5b8adf35079994f9
+Author: bkvanvig <bkvanvig104@yahoo.com>
+Date:   Mon Jul 20 21:21:09 2015 -0500
+
+    added newline
+
+commit ef28e85061da5c6df254833210b51adec4eff314
+Author: bkvanvig <bkvanvig104@yahoo.com>
+Date:   Mon Jul 20 21:19:53 2015 -0500
+
+    added gitignore
+
+commit 34788260f2038c315fc6e9052c7d9e62df7436a8
+Author: bkvanvig <bkvanvig104@yahoo.com>
+Date:   Mon Jul 20 21:19:30 2015 -0500
+
+    close #1, close #2, close #3, close #8
+
+commit 6b6d1b82da53998c939d08886e758194b34bb1a7
+Author: Brittany Kvanvig <brittany.kvanvig@utexas.edu>
+Date:   Mon Jul 20 20:50:54 2015 -0500
+
+    first commit
