@@ -110,6 +110,7 @@ TestGraph: Graph.h TestGraph.c++
 	$(CXX) $(GCOVFLAGS) $(CXXFLAGS) TestGraph.c++ -o TestGraph $(LDFLAGS)
 
 TestGraph.out: TestGraph
+	./TestGraph
 	$(VALGRIND) ./TestGraph  >  TestGraph.out 2>&1
 	$(GCOV) -b TestGraph.c++ >> TestGraph.out
 	cat TestGraph.out
